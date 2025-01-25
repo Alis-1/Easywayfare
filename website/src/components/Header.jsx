@@ -1,23 +1,20 @@
 import React from 'react';
-import '../styles/header.css';
-import logo from '../assets/lentokone.png';
+import { Link } from 'react-router-dom';
+import '../styles/Header.css';
 
 const Header = () => {
-  return (
-    <div className="header-background-card">
-      <div className="header">
-        <h1>Easywayfare</h1>
-        <img src={logo} className="logo react" alt="React logo" />
-        <div className="nav">
-          <ul>
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/contact">Contact</a>
-          </ul>
-        </div>
-      </div>
-    </div>
-  );
+    return (
+        <header className="header">
+            <div className="logo">Easywayfare</div>
+            <nav>
+                <ul className="nav-links">
+                    <li><Link to="/">Koti</Link></li>
+                    <li><Link to="/about">Tietoa</Link></li>
+                    <li><Link to="/contact">Yhteystiedot</Link></li>
+                </ul>
+            </nav>
+        </header>
+    );
 };
 
 export default Header;
