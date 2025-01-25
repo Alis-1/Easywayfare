@@ -13,7 +13,7 @@ const HomePage = () => {
 
   return (
     <div className="home-page">
-      <h1>Welcome to Easywayfare</h1>
+      <h1>Journey starts here</h1>
       {loading && <p>Loading...</p>}
       {error && <p>Error loading travel tips.</p>}
     </div>

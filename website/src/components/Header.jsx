@@ -3,16 +3,18 @@ import '../styles/header.css';
 
 const Header = () => {
   return (
-    <header className="header">
+    <div className="header-background-card">
+    <div className="header">
       <h1>Easywayfare</h1>
-      <nav>
+        <div className="nav">
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
         </ul>
-      </nav>
-    </header>
+      </div>
+    </div>
+    </div>
   );
 };
 
