@@ -1,3 +1,11 @@
+.search-bar-container {
+  display: flex;
+  justify-content: center; /* Vaakasuuntainen keskitys */
+  align-items: center; /* Pystysuuntainen keskitys */
+  width: 100%; /* Tai haluamasi leveys */
+  margin-top: 20px; /* Tai haluamasi marginaali yläreunasta */
+}
+
 .search-bar {
     display: flex;
     align-items: center;
