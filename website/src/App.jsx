@@ -5,24 +5,26 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
-import SearchBar from "./components/SearchBar";
+import SearchBarGoogle from "./components/SearchBarGoogle";
 import "./styles/SearchBar.css";
 import './App.css';
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
 
-  const handleSearch = (query) => {
-    console.log("Searching for:", query);
-    const filteredResults = []; // Esimerkki: tyhjä lista
-    setSearchResults(filteredResults);
-  };
+  // const handleSearch = (query) => {
+  //   console.log("Searching for:", query);
+  //   const filteredResults = []; // Esimerkki: tyhjä lista
+  //   setSearchResults(filteredResults);
+  // };
+
+
 
   return (
     <Router>
       <div className="app">
         <Header />
-        <SearchBar onSearch={handleSearch} />
+        <SearchBarGoogle />
         <ul>
           {searchResults.map(result => (
             <li key={result.id}>{result.name}</li>
