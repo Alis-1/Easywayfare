@@ -1,8 +1,12 @@
 import React from 'react';
+import '../App.css'; 
+import Logo from '../components/Logo';
+import useFetch from '../hooks/UseFetch';
 
 const ContactPage = () => {
   return (
     <div className="contact-page">
+      <Logo /> 
       <h1>Contact Us</h1>
       <p>If you have any questions, feel free to reach out to us!</p>
       <p>Our office is open: Mo-Thu 8am - 5pm</p>

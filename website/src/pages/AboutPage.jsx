@@ -1,8 +1,11 @@
 import React from 'react';
-
+import '../App.css'; 
+import Logo from '../components/Logo';
+import useFetch from '../hooks/UseFetch';
 const AboutPage = () => {
   return (
     <div className="about-page">
+      <Logo /> 
       <h1>About Easywayfare</h1>
       <p>We provide you an Easy Way to explore the world, while keeping the Fares low.</p>
       <p>Our mission is to inspire and help travelers around the globe explore with confidence and ease. </p>
