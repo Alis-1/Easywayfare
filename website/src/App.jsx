@@ -12,24 +12,19 @@ import './App.css';
 function App() {
   const [searchResults, setSearchResults] = useState([]);
 
-  // const handleSearch = (query) => {
-  //   console.log("Searching for:", query);
-  //   const filteredResults = []; // Esimerkki: tyhjä lista
-  //   setSearchResults(filteredResults);
-  // };
-
-
-
+  
+  
   return (
     <Router>
       <div className="app">
         <Header />
         <SearchBarGoogle />
-        <ul>
+        <ul> 
           {searchResults.map(result => (
             <li key={result.id}>{result.name}</li>
           ))}
         </ul>
+        
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />

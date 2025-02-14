@@ -2,7 +2,6 @@ import React, { useEffect } from "react"
 import api_key from "../apiFolder/api"
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api'
 
-
 const API_KEY = api_key
 
 const SearchBarGoogle = () => {
@@ -24,7 +23,7 @@ const SearchBarGoogle = () => {
 
   return (
     <div id="place-picker-box">
-      <gmpx-api-loader key={API_KEY.key} solution-channel="GMP_GE_placepicker_v2">
+      <gmpx-api-loader key={API_KEY} solution-channel="GMP_GE_placepicker_v2">
         <div id="place-picker-container">
           <gmpx-place-picker placeholder="Enter an address"></gmpx-place-picker>
         </div>
