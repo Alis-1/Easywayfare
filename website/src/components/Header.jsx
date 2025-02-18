@@ -11,6 +11,7 @@ const Header = () => {
                     <li><Link to="/">Koti</Link></li>
                     <li><Link to="/about">Tietoa</Link></li>
                     <li><Link to="/contact">Yhteystiedot</Link></li>
+                    <li><Link to="/map">Map Testing</Link></li>
                 </ul>
             </nav>
         </header>

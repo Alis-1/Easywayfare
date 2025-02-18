@@ -1,8 +1,12 @@
 import React, { useEffect } from "react"
-import api_key from "../apiFolder/api"
+import api_key from "../../apiFolder/api"
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api'
 
+
+
 const API_KEY = api_key
+
+
 
 const SearchBarGoogle = () => {
   const { isLoaded } = useJsApiLoader({
@@ -15,11 +19,15 @@ const SearchBarGoogle = () => {
     script.src = "https://ajax.googleapis.com/ajax/libs/@googlemaps/extended-component-library/0.6.11/index.min.js"
     script.type = "module"
     document.head.appendChild(script)
+
+    
     
     return () => {
       document.head.removeChild(script); // Clean up on component unmount
     }
   }, [])
+
+  
 
   return (
     <div id="place-picker-box">
@@ -28,6 +36,7 @@ const SearchBarGoogle = () => {
           <gmpx-place-picker placeholder="Enter an address"></gmpx-place-picker>
         </div>
       </gmpx-api-loader>
+      <button></button>
     </div>
   )
 }

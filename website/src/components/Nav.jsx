@@ -9,6 +9,7 @@ const Nav = () => {
                 <li><a href="#home">Koti</a></li>
                 <li><a href="#about">Tietoa</a></li>
                 <li><a href="#contact">Yhteystiedot</a></li>
+                <li><a href="#map">MapTest</a></li>
             </ul>
         </nav>
     );

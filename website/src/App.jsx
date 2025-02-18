@@ -5,9 +5,11 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import MapPage from './pages/MapPage';
 import SearchBarGoogle from "./components/SearchBarGoogle";
 import "./styles/SearchBar.css";
 import './App.css';
+
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
@@ -30,6 +32,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/map" element={<MapPage />} />
           </Routes>
         </main>
         <Footer />
