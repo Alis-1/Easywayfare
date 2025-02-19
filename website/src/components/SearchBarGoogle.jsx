@@ -46,7 +46,7 @@ const SearchBarGoogle = () => {
     else {
       console.log("No address selected")
     }
-    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address},+CA&key=${API_KEY}`, {
+    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address},&key=${API_KEY}`, {
       method: 'GET',
     })
     .then(res => res.json())

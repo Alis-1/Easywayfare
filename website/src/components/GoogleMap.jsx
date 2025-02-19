@@ -10,7 +10,7 @@ const GoogleMapShow = ({latitude, longitude}) => {
         <APIProvider apiKey={API_KEY} onLoad={() => console.log('Maps API has loaded.')}>
         <div style={{ height: '50vh', width: '100%' }}>
         <Map
-        defaultZoom={13}
+        defaultZoom={13.4}
         center={{lat: latitude, lng: longitude}}
         onCameraChanged={(ev) =>
           console.log('camera changed:', ev.detail.center, 'zoom:', ev.detail.zoom)
