@@ -1,15 +1,39 @@
 body {
-    padding: 25px;
-    background-color: #f0f1f3;
-    font-family: "Arial", sans-serif;
+  padding: 25px;
+  background-color: #f0f1f3;
+  font-family: "Arial", sans-serif;
+}
+
+#place-picker-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#place-picker-container {
+  text-align: left;
+  width: 100%;
+  max-width: 600px;
+  margin: 10px;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
   }
-  
-  #place-picker-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
+
   #place-picker-container {
-    text-align: left;
+    max-width: 100%;
   }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  #place-picker-container {
+    margin: 5px;
+  }
+}

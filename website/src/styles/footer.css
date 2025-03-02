@@ -1,11 +1,31 @@
 .footer {
-    background-color: #f1f1f1;
-    padding: 20px;
-    text-align: center;
-    height: auto;
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+  height: auto;
+}
+
+.footer p {
+  margin: 0;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 15px;
   }
-  
+
   .footer p {
-    margin: 0;
-    color: #333;
+    font-size: 0.9em;
   }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 10px;
+  }
+
+  .footer p {
+    font-size: 0.8em;
+  }
+}

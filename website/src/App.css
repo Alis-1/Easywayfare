@@ -58,62 +58,69 @@ footer {
 /* Media queries for responsiveness */
 @media (max-width: 1024px) {
   nav ul {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   nav ul li {
-      margin: 10px 0;
+    margin: 10px 0;
   }
 
   main {
-      padding: 10px;
+    padding: 10px;
   }
 }
 
 @media (max-width: 768px) {
   .banner h1 {
-      font-size: 2em;
+    font-size: 2em;
   }
 
   nav ul li a {
-      padding: 10px;
+    padding: 10px;
   }
 
   main {
-      padding: 10px;
+    padding: 10px;
   }
 }
 
 @media (max-width: 480px) {
   .banner h1 {
-      font-size: 1.5em;
+    font-size: 1.5em;
   }
 
   nav ul li a {
-      padding: 5px;
+    padding: 5px;
   }
 
   main {
-      padding: 5px;
+    padding: 5px;
   }
 }
 
 .contact-page {
   display: flex;
   flex-direction: column; 
-  align-items: flex-start; 
+  align-items: center; /* Keskittää sisällön vaakasuunnassa */
   max-width: 800px; 
   margin: 20px auto; 
   padding: 20px;
 }
 
 .info-box {
+  width: 100%; /* Mukautuu vanhemman elementin leveyteen */
+  max-width: 400px;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
   margin-top: 20px; 
   text-align: left;
   border: 1px solid #ddd;
+}
+
+/* Responsiiviset kuvat */
+img {
+  max-width: 100%;
+  height: auto;
 }
