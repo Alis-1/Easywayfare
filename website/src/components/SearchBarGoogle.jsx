@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import api_key from "../../apiFolder/api"
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api'
 import GoogleMapShow from '../components/GoogleMap';
+import fetchCoordinates from "../hooks/Coordinates";
 
 
 
@@ -43,26 +44,14 @@ const SearchBarGoogle = () => {
       console.log("Selected address: ", selectedAddress)
       setAddress(selectedAddress)
       
-      fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${selectedAddress},&key=${API_KEY}`, {
-        method: 'GET',
-      })
-      .then(res => res.json())
-      .then(data => {
-        if (data.status === 'OK' && data.results.length > 0) {
-          const latitude = data.results[0].geometry.location.lat
-          const longitude = data.results[0].geometry.location.lng
-          setLatitude(latitude)
-          setLongitude(longitude)
-        } else {
-          console.error("No results found or invalid response: ", data.status)
-        }
+      fetchCoordinates(selectedAddress).then(coordinates => {
+        setLatitude(coordinates.latitude)
+        setLongitude(coordinates.longitude)
       })
     }
     else {
       console.log("No address selected")
     }
-    console.log(latitude)
-    console.log(longitude)
   }
 
   
