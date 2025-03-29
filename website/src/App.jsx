@@ -49,13 +49,15 @@ function App() {
               <Route path="/" element={
                 <>
                   <div className="hero-section">
-                    <h1 className="hero-title">Löydä seuraava matkakohteesi</h1>
-                    <p className="hero-subtitle">Tutustu maailmaan helposti ja nopeasti</p>
-                    <SearchBar 
-                      onSearch={setSearchResults}
-                      onLoading={setIsLoading}
-                      onError={setError}
-                    />
+                    <div className="hero-content">
+                      <h1 className="hero-title">Löydä seuraava matkakohteesi</h1>
+                      <p className="hero-subtitle">Tutustu maailmaan helposti ja nopeasti</p>
+                      <SearchBar 
+                        onSearch={setSearchResults}
+                        onLoading={setIsLoading}
+                        onError={setError}
+                      />
+                    </div>
                   </div>
 
                   {isLoading && (

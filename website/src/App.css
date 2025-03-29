@@ -2,23 +2,29 @@
 :root {
   /* Vaalea teema */
   --light-bg: #ffffff;
-  --light-text: #333333;
-  --light-primary: #2563eb;
-  --light-secondary: #1d4ed8;
-  --light-accent: #3b82f6;
+  --light-text: #1f2937;
+  --light-primary: #4f46e5;
+  --light-secondary: #4338ca;
+  --light-accent: #6366f1;
   --light-surface: #f8fafc;
   --light-border: #e2e8f0;
   --light-shadow: rgba(0, 0, 0, 0.1);
+  --light-gradient: linear-gradient(135deg, #4f46e5, #6366f1);
+  --light-card-bg: rgba(255, 255, 255, 0.8);
+  --light-hover: #f3f4f6;
 
   /* Tumma teema */
-  --dark-bg: #1a1a1a;
-  --dark-text: #ffffff;
-  --dark-primary: #3b82f6;
-  --dark-secondary: #2563eb;
-  --dark-accent: #60a5fa;
-  --dark-surface: #2d2d2d;
-  --dark-border: #404040;
+  --dark-bg: #111827;
+  --dark-text: #f3f4f6;
+  --dark-primary: #6366f1;
+  --dark-secondary: #4f46e5;
+  --dark-accent: #818cf8;
+  --dark-surface: #1f2937;
+  --dark-border: #374151;
   --dark-shadow: rgba(0, 0, 0, 0.3);
+  --dark-gradient: linear-gradient(135deg, #6366f1, #818cf8);
+  --dark-card-bg: rgba(31, 41, 55, 0.8);
+  --dark-hover: #374151;
 
   /* Yhteiset muuttujat */
   --spacing-xs: 0.5rem;
@@ -26,8 +32,13 @@
   --spacing-md: 1.5rem;
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
-  --border-radius: 8px;
-  --transition: all 0.3s ease;
+  --border-radius: 12px;
+  --border-radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* Perustyylit */
@@ -40,6 +51,7 @@
 html, body {
   width: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -51,6 +63,9 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
+  background-color: var(--light-bg);
+  color: var(--light-text);
+  transition: var(--transition);
 }
 
 .app {
@@ -84,33 +99,45 @@ body {
 .hero-section {
   text-align: center;
   padding: var(--spacing-xl) var(--spacing-md);
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-              url('/travel-banner.jpg') center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+              url('https://images.unsplash.com/photo-1444723121867-7a241cacace9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80') center/cover;
   color: white;
-  border-radius: var(--border-radius);
-  margin-bottom: var(--spacing-xl);
   width: 100vw;
   max-width: 100vw;
   margin: 0;
-  border-radius: 0;
   position: relative;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing-xl);
 }
 
 .hero-title {
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 3.5rem;
+  font-weight: 800;
   margin-bottom: var(--spacing-md);
   line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 0.8s ease-out;
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   margin-bottom: var(--spacing-lg);
   opacity: 0.9;
+  animation: fadeInUp 0.8s ease-out 0.2s backwards;
 }
 
 /* Hakutoiminto */
@@ -119,10 +146,12 @@ body {
   max-width: 800px;
   margin: 0 auto;
   padding: var(--spacing-md);
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--light-card-bg);
   backdrop-filter: blur(10px);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-lg);
+  animation: fadeInUp 0.8s ease-out 0.4s backwards;
 }
 
 .search-form {
@@ -144,25 +173,26 @@ body {
 .search-input:focus {
   outline: none;
   border-color: var(--light-accent);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
 .search-button {
   padding: var(--spacing-md) var(--spacing-lg);
-  background: var(--light-primary);
+  background: var(--light-gradient);
   color: white;
   border: none;
   border-radius: var(--border-radius);
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: var(--transition);
   white-space: nowrap;
+  box-shadow: var(--shadow-md);
 }
 
 .search-button:hover {
-  background: var(--light-secondary);
   transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 /* Hakutulokset */
@@ -181,22 +211,29 @@ body {
 }
 
 .result-card {
-  background: var(--light-surface);
-  border-radius: var(--border-radius);
+  background: var(--light-card-bg);
+  border-radius: var(--border-radius-lg);
   overflow: hidden;
-  box-shadow: 0 4px 6px var(--light-shadow);
+  box-shadow: var(--shadow-md);
   transition: var(--transition);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .result-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 12px var(--light-shadow);
+  box-shadow: var(--shadow-xl);
 }
 
 .result-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  transition: var(--transition);
+}
+
+.result-card:hover img {
+  transform: scale(1.05);
 }
 
 .result-content {
@@ -206,6 +243,8 @@ body {
 .result-content h3 {
   margin-bottom: var(--spacing-sm);
   color: var(--light-primary);
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .read-more {
@@ -218,11 +257,25 @@ body {
   border-radius: var(--border-radius);
   cursor: pointer;
   transition: var(--transition);
+  font-weight: 500;
 }
 
 .read-more:hover {
   background: var(--light-primary);
   color: white;
+  transform: translateY(-2px);
+}
+
+/* Animaatiot */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Latausanimaatio */
@@ -260,7 +313,7 @@ body {
 
 /* Tumma teema */
 .dark .search-container {
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--dark-card-bg);
 }
 
 .dark .search-input {
@@ -270,24 +323,16 @@ body {
 
 .dark .search-input:focus {
   border-color: var(--dark-accent);
-  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.1);
 }
 
 .dark .search-button {
-  background: var(--dark-primary);
-}
-
-.dark .search-button:hover {
-  background: var(--dark-secondary);
+  background: var(--dark-gradient);
 }
 
 .dark .result-card {
-  background: var(--dark-surface);
-  box-shadow: 0 4px 6px var(--dark-shadow);
-}
-
-.dark .result-card:hover {
-  box-shadow: 0 8px 12px var(--dark-shadow);
+  background: var(--dark-card-bg);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .dark .result-content h3 {
