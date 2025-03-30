@@ -8,6 +8,7 @@ import ContactPage from './pages/ContactPage';
 import MapPage from './pages/MapPage';
 import SearchBar from './components/SearchBar';
 import ImageGallery from './components/ImageGallery';
+import PlaceModal from './components/PlaceModal';
 import './App.css';
 
 // Sivun siirtymäanimaatio
@@ -33,9 +34,47 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [isApiLoaded, setIsApiLoaded] = useState(false);
+  const [selectedPlace, setSelectedPlace] = useState(null);
+  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+
+  useEffect(() => {
+    // Tarkista onko API jo ladattu
+    if (window.google && window.google.maps) {
+      setIsApiLoaded(true);
+      return;
+    }
+
+    // Lataa Google Maps JavaScript API
+    const script = document.createElement('script');
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
+    script.async = true;
+    script.defer = true;
+
+    script.onload = () => {
+      setIsApiLoaded(true);
+    };
+
+    script.onerror = () => {
+      setError('Google Maps API:n lataus epäonnistui. Yritä ladata sivu uudelleen.');
+    };
+
+    document.head.appendChild(script);
+
+    return () => {
+      const scriptElement = document.querySelector(`script[src*="${apiKey}"]`);
+      if (scriptElement) {
+        document.head.removeChild(scriptElement);
+      }
+    };
+  }, [apiKey]);
 
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
+  };
+
+  const handlePlaceClick = (place) => {
+    setSelectedPlace(place);
   };
 
   return (
@@ -56,6 +95,7 @@ function App() {
                         onSearch={setSearchResults}
                         onLoading={setIsLoading}
                         onError={setError}
+                        isApiLoaded={isApiLoaded}
                       />
                     </div>
                   </div>
@@ -83,7 +123,15 @@ function App() {
                             <div className="result-content">
                               <h3>{result.name}</h3>
                               <p>{result.description}</p>
-                              <button className="read-more">Lue lisää</button>
+                              <div className="rating">
+                                <span>⭐ {result.rating}</span>
+                              </div>
+                              <button 
+                                className="read-more"
+                                onClick={() => handlePlaceClick(result)}
+                              >
+                                Lue lisää
+                              </button>
                             </div>
                           </div>
                         ))}
@@ -92,11 +140,18 @@ function App() {
                   )}
 
                   <ImageGallery />
+
+                  {selectedPlace && (
+                    <PlaceModal
+                      place={selectedPlace}
+                      onClose={() => setSelectedPlace(null)}
+                    />
+                  )}
                 </>
               } />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
-              <Route path="/map" element={<MapPage />} />
+              <Route path="/map" element={<MapPage isApiLoaded={isApiLoaded} />} />
             </Routes>
           </PageTransition>
         </main>
