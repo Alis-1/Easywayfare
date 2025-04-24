@@ -9,8 +9,6 @@
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -24,9 +22,10 @@ a:hover {
 
 body {
   margin: 0;
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
   display: flex;
-  justify-content: center; /* Keskittää sisällön vaakasuunnassa */
-  align-items: center; /* Keskittää sisällön pystysuunnassa */
+  justify-content: center;
+  align-items: center;
   min-width: 320px;
   min-height: 100vh;
   background-color: #242424;
@@ -56,7 +55,7 @@ button:hover {
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 4px auto currentColor;
 }
 
 @media (prefers-color-scheme: light) {

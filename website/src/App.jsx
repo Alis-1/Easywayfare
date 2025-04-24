@@ -76,7 +76,7 @@ function App() {
   const handlePlaceClick = (place) => {
     setSelectedPlace(place);
   };
-
+  
   return (
     <Router>
       <div className={`app ${theme}`}>
@@ -84,7 +84,7 @@ function App() {
         
         <main className="main-content">
           <PageTransition>
-            <Routes>
+          <Routes>
               <Route path="/" element={
                 <>
                   <div className="hero-section">
@@ -149,10 +149,10 @@ function App() {
                   )}
                 </>
               } />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/contact" element={<ContactPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
               <Route path="/map" element={<MapPage isApiLoaded={isApiLoaded} />} />
-            </Routes>
+          </Routes>
           </PageTransition>
         </main>
 

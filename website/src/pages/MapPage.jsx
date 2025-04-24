@@ -6,7 +6,7 @@ const MapPage = () => {
   const turkuLat = 60.4518;
   const turkuLng = 22.2666;
 
-  return (
+    return (
     <div className="map-page">
       <div className="map-container">
         <iframe

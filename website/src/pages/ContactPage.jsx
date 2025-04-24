@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../App.css';
+import '../App.css'; 
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -54,8 +54,8 @@ const ContactPage = () => {
                 </li>
               </ul>
             </div>
-
-            <div className="info-box">
+      
+      <div className="info-box">
               <h2>Sosiaalinen media</h2>
               <div className="social-links">
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
@@ -141,7 +141,7 @@ const ContactPage = () => {
           title="Sijainti kartalla"
         ></iframe>
       </section>
-    </div>
+   </div>
   );
 };
 
