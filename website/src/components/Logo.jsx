@@ -1,5 +1,3 @@
-// src/components/Logo.jsx
-// src/components/Logo.jsx
 import React from 'react';
 import yourLogo from '../assets/your_logo.png';
 import '../styles/Logo.css'; // Updated path to Logo.css

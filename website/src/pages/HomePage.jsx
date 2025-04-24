@@ -3,7 +3,6 @@ import '../App.css';
 import Logo from '../components/Logo';
 import useFetch from '../hooks/UseFetch';
 
-// ... rest of your HomePage component code
 const HomePage = () => {
   const [tips, setTips] = useState([]);
   const { data, loading, error } = useFetch('YOUR_API_ENDPOINT_HERE');

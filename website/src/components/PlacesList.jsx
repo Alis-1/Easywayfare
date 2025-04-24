@@ -1,8 +1,8 @@
-import React from 'react';
-import api_key from "../../apiFolder/api";
+// import React from 'react';
+// import api_key from "../../apiFolder/api";
 
-const API_KEY = api_key
+// const API_KEY = api_key
 
-const PlacesList = () => {
+// const PlacesList = () => {
     
-}
+// }
