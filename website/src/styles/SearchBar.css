@@ -13,10 +13,11 @@
 }
 
 .search-input {
-  padding: 8px;
-  width: 200px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+	color: black;
+	padding: 8px;
+	width: 200px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
 }
 
 .search-button {

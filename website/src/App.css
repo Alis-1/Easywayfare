@@ -2,7 +2,7 @@
 :root {
   /* Vaalea teema */
   --light-bg: #ffffff;
-  --light-text: #1f2937;
+  --light-text: #000000;
   --light-primary: #4f46e5;
   --light-secondary: #4338ca;
   --light-accent: #6366f1;
@@ -159,7 +159,8 @@ body {
 }
 
 .search-input {
-  flex: 1;
+  color: black;
+	flex: 1;
   padding: var(--spacing-md);
   border: 2px solid transparent;
   border-radius: var(--border-radius);
