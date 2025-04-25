@@ -11,7 +11,7 @@ const ImageGallery = () => {
     {
       id: 2,
       name: 'Santorini, Kreikka',
-      image: 'https://images.unsplash.com/photo-1613395877347-5d878812f4b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80',
+      image: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=2638&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       description: 'Valkoinen ja sininen paratiisi'
     },
     {
@@ -35,7 +35,7 @@ const ImageGallery = () => {
     {
       id: 6,
       name: 'New York, USA',
-      image: 'https://images.unsplash.com/photo-1496442226666-8d4d801e126f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80',
+      image: 'https://images.unsplash.com/photo-1499566727020-881da110a0b0?q=80&w=2743&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       description: 'Ikuinen kaupunki'
     }
   ];
