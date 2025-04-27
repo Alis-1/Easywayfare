@@ -37,6 +37,18 @@ const ImageGallery = () => {
       name: 'New York, USA',
       image: 'https://images.unsplash.com/photo-1499566727020-881da110a0b0?q=80&w=2743&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       description: 'Ikuinen kaupunki'
+    },
+    {
+      id: 7,
+      name: 'New Delhi, Intia',
+      image: 'https://images.unsplash.com/photo-1563435159207-9de24201ec8b?q=80&w=1973&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      description: 'Värien ja kulttuurin sulatusuuni'
+    },
+    {
+      id: 8,
+      name: 'Rio de Janeiro, Brasilia',
+      image: 'https://plus.unsplash.com/premium_photo-1671211307997-f4f552b0601c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      description: 'Karnevaalien ja rantojen kaupunki'
     }
   ];
 
